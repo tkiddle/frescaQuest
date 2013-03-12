@@ -1,0 +1,38 @@
+<template name="loginRegister">
+	<h1>Login or Register</h1>
+	{{#if currentUser}}
+		<p>You are already logged in!</p>
+		<p><a href="" class="link" title="Login or Register">Logout</a></p>
+	{{else}}
+		<div>
+			<p id="show_me_login" class="choice_links">Login</p>
+			<p id="show_me_register" class="choice_links">Register</p>
+		</div>
+
+		<form id="login_form" class="generic_form">
+			<legend class="hide">Login</legend>
+			<input id="username" type="text" name="username" placeholder="Username" />
+			<input id="password" type="password" name="password" placeholder="Password"/>
+			<input class="big_but green_b" type="submit"  value="Login"/>
+			<p><a href="retrival">Forgottern your password?</a></p>
+		</form>
+
+		<form id="register_form"  class="generic_form">
+			<legend class="hide">SignUp</legend>
+			<fieldset>
+				<p class="form_note">Please tell us a little about yourself</p>
+				<input id="fname" type="text" name="fname" placeholder="First Name" tabindex="1" />
+				<input id="lname" type="text" name="lname" placeholder="Last Name" tabindex="1" />
+				<input id="email" type="email" name="email" placeholder="Email" tabindex="2" />
+			</fieldset>
+			<fieldset>
+				<p class="form_note">Choose your username & password</p>
+				<input id="new_username" type="text" name="new_username" placeholder="Username" />
+				<input id="new_password" type="password"  name="new_password" placeholder="Password" />
+			</fieldset>
+			<input class="big_but green_b" type="submit" value="Register" />
+		</form>
+	{{/if}}
+
+
+</template>

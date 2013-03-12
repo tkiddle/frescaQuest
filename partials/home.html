@@ -1,0 +1,27 @@
+<template name="home">
+	<!-- Hompage Recent Questions -->
+	<!--<input id="qsearch" type="text" placeholder="Search for a question..." />-->
+	{{#each questions}}
+	<div class="question">
+		<div class="ql">
+			<p class="qtitle"><a href="#/question/{{question.id}}">{{title}}</a></p>
+			<p class="author">by: {{author}}</p>
+			{{#each tags}}
+			<span class="tag">{{this}}</span>
+			{{/each}}
+		</div>
+		<div class="qr">
+			<div class="votes">
+				<p class="vt">Votes</p>
+				<p class="vcount"></p>
+			</div>
+			<div class="answers">
+				<p class="at">Answers</p>
+				<p class="acount">{{question}}</p>
+			</div>
+		</div>
+		
+	</div>
+	{{/each}}
+<!-- Hompage Recent Questions -->
+</template>

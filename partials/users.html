@@ -1,0 +1,14 @@
+<template name="users">
+		
+	<h1>Users on FrescaQuest</h1>
+	<p>Below is a list of all registered users on FrescaQuest</p>
+
+	<div>
+		<h2>All Users</h2>
+		<ul id="users">
+			{{#each allUsers}}	
+				<li>{{username}}</li>
+			{{/each}}
+		</ul>
+	</div>
+</template>

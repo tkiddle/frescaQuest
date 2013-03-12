@@ -1,0 +1,32 @@
+<template name="content">
+	<div id="main_content" class="clearfix">
+	
+		{{#if home}}
+			{{> home}}
+		{{/if}}
+
+		{{#if about}}
+			{{> about}}
+		{{/if}}
+		
+		{{#if contact}}
+			{{> contact}}
+		{{/if}}
+
+		{{#if loginRegister}}
+			{{> loginRegister}}
+		{{/if}}
+
+		{{#if account}}
+			{{> account}}
+		{{/if}}
+
+		{{#if newQuestion}}
+			{{> newQuestion}}
+		{{/if}}
+
+		{{#if users}}
+			{{> users}}
+		{{/if}}
+	</div>
+</template>

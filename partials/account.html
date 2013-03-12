@@ -1,0 +1,15 @@
+<template name="account">
+		
+	<h1>Your Account</h1>
+	<p>Welcome back  {{#if currentUser}}{{greet}}{{/if}}</p>
+
+	<div>
+		<h2>Your recent questions</h2>
+		<ul id="your_questions">
+		{{#each questions}}
+			<li>{{title}}</li>
+		{{/each}}
+		</ul>
+	</div>
+	
+</template>
