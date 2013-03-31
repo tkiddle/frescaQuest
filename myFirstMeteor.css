@@ -156,12 +156,12 @@ input:-moz-placeholder{color:#b8b8b8;}
 
 
 #speak_up{margin-top:60px;}
-#speak_up textarea{width:666px; height:200px; resize:none; padding:16px;border:1px solid #deddd6; margin-bottom:130px; background:#f1f1f1;font-size:16px; font-family:Myriad Pro; text-transform:uppercase;}
+#speak_up textarea{width:666px; height:200px; resize:none; padding:16px;border:1px solid #deddd6; margin-bottom:130px; background:#f1f1f1;font-size:16px; font-family:Myriad Pro;}
 #speak_up textarea{opacity:0.5;}
 #speak_up textarea{border-radius:10px;}
 
 
-#tag_me{height:24px; width:666px; padding:8px 16px; float:left;  margin:20px 0 40px 0; background:#f1f1f1; font-family:Myriad Pro; font-size:16px; border: 1px solid #deddd6; text-transform:uppercase; color:#333333;}
+#tag_me{height:24px; width:666px; padding:8px 16px; float:left;  margin:20px 0 40px 0; background:#f1f1f1; font-family:Myriad Pro; font-size:16px; border: 1px solid #deddd6; color:#333333;}
 #tag_me{opacity:0.5;}
 #tag_me{border-radius:10px;}
 
@@ -175,7 +175,7 @@ input:-moz-placeholder{color:#b8b8b8;}
 .generic_form input[type=text],
 .generic_form input[type=password],
 .generic_form input[type=email]
-{height:24px; width:666px; padding:10px 16px 8px; float:left;  margin:20px 0 40px 0; background:#f1f1f1; font-family:Myriad Pro; font-size:16px; border: 1px solid #deddd6; text-transform:uppercase; color:#333333;}
+{height:24px; width:666px; padding:10px 16px 8px; float:left;  margin:20px 0 40px 0; background:#f1f1f1; font-family:Myriad Pro; font-size:16px; border: 1px solid #deddd6; color:#333333;}
 
 .generic_form input[type=text],
 .generic_form input[type=password],
@@ -206,7 +206,7 @@ input:-moz-placeholder{color:#b8b8b8;}
 .generic_form select{margin:20px 0 40px;color:#333333; font-size:16px; text-transform:uppercase; background:#F1F1F1; border:1px solid #DEDDD6; padding:12px; width:100%;}
 .generic_form select{border-radius:10px;}
 
-.generic_form textarea{width:666px; height:200px; resize:none; padding:16px;border:1px solid #deddd6; margin-bottom:130px; background:#f1f1f1;font-size:16px; font-family:Myriad Pro; text-transform:uppercase;}
+.generic_form textarea{width:666px; height:200px; resize:none; padding:16px;border:1px solid #deddd6; margin-bottom:130px; background:#f1f1f1;font-size:16px; font-family:Myriad Pro;}
 .generic_form textarea{opacity:0.5;}
 .generic_form textarea{border-radius:10px;}
 
