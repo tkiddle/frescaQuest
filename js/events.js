@@ -24,13 +24,28 @@ if (Meteor.isClient) {
 				qTags.val('');
 			});
 
-		}
+		},
+		
+		'click .q_link': function (e) {
+
+	    	var reg = /.+?\:\/\/.+?(\/.+?)(?:#|\?|$)/;
+    		var pathname = reg.exec(event.currentTarget.href)[1];
+    		//alert(pathname);
+    		Router.navigate(pathname, true);
+	        e.preventDefault();
+
+	    }
 
 	});//content.events ENDS
 
-
 	//Header template events
 	Template.header.events ({
+		'click .home_link': function (e) {
+
+    		Router.navigate('', true);
+	        e.preventDefault();
+
+	    },
 
 	    'click .link': function (e) {
 
@@ -126,7 +141,5 @@ if (Meteor.isClient) {
 
 	});//loginRegister.events ENDS
 
-
-
-
+	
 }

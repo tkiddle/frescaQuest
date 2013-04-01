@@ -7,7 +7,9 @@
 		<h2>Your recent questions</h2>
 		<ul id="your_questions">
 		{{#each questions}}
-			<li>{{title}}</li>
+			<li>
+				<a class="q_link" href="/question/{{_id}}">{{title}}</a>
+			</li>
 		{{/each}}
 		</ul>
 	</div>

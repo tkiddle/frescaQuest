@@ -1,5 +1,9 @@
 if (Meteor.isClient) {
 
+  Template.header.homeLink = function(){
+    return window.location.host;
+  };
+
   Template.account.greet = function(){
     return Meteor.user().profile.fname;
   };
@@ -14,6 +18,32 @@ if (Meteor.isClient) {
   Template.home.questions = function(){
        return Questions.find();
   };
+
+  Template.questionDetails.qDetails = function () {
+    var   qDocs = Questions.find().collection.docs,
+          qDocsMember = Session.get('page_id').slice(Session.get('page_id').indexOf('/') + 1,Session.get('page_id').length);
+    
+    return qDocs[qDocsMember];
+  };
+
+  Template.questionDetails.editAllowed = function () {
+     var  qDocs = Questions.find().collection.docs,
+          qDocsMember = Session.get('page_id').slice(Session.get('page_id').indexOf('/') + 1,Session.get('page_id').length),
+          currentQuestion = qDocs[qDocsMember].owner,
+          currentUser = Meteor.userId();
+
+    if(currentUser === currentQuestion){
+
+      return true;
+
+    }
+
+  };
+
+
+
+
+
 
   //New meteor collection
   var Questions = new Meteor.Collection('questions');

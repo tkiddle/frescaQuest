@@ -29,11 +29,15 @@
   };
 
   Template.content.questionDetails = function(){
-     
-    return Session.get('qpage') ==  'id';
+    var qDocs = Questions.find().collection.docs,
+        qDocsMember = Session.get('page_id').slice(Session.get('page_id').indexOf('/') + 1,Session.get('page_id').length);
+        
+        if(qDocs.hasOwnProperty(qDocsMember)){
+
+           return Session.get('page_id') == 'question/' + qDocsMember;
+        }
+  
   };
-
-
 
 
   //Set up router
@@ -69,7 +73,7 @@
        Session.set('page_id', 'users');
     },
     question : function (id) {
-       Session.set('qpage', id);
+       Session.set('page_id', 'question/' + id);
     }
      
   });
