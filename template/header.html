@@ -1,26 +1,26 @@
 <template name="header">
 		<div id ="user_nav">
 			<div id="un_inner">
-				<a href="/#" class="link" title="FrescaQuest - Home">
+				<span class="home_link">
 					<img src="/images/logo.png" title="FrescaQuest" />
-				</a>
+				</span>
 				<div id="utilities">
 					{{#if currentUser}}
-						<a href="home" class="logout" title="Logout">Logout</a>
-						<a href="account" class="link" title="My Account">My Account</a>
+						<a href="/home" class="logout" title="Logout">Logout</a>
+						<a href="/account" class="link" title="My Account">My Account</a>
 					{{else}}
-						<a href="login" class="link" title="Login or Register">Login/Register</a>
+						<a href="/login" class="link" title="Login or Register">Login/Register</a>
 					{{/if}}
 				</div>
 			</div>
 		</div>
 		<div id="main_nav">
 			<ul>
-				<li><a href="about" class="link">Tags</a></li>
-				<li><a href="users" class="link">Users</a></li>
+				<li><a href="/about" class="link">Tags</a></li>
+				<li><a href="/users" class="link">Users</a></li>
 				<li><a href="#" class="link">Unanswered</a></li>
 			</ul>
-			<a href="new" id="ask_button" class="link" title="Ask a question">Ask a question</a>
+			<a href="/new" id="ask_button" class="link" title="Ask a question">Ask a question</a>
 		</div>
 </template>
 

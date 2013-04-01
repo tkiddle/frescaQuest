@@ -1,4 +1,5 @@
 <template name="newQuestion">
+	{{#if currentUser}}
 	<h1>Submit a new question</h1>
 	<form id="new_question" class="generic_form">
 		<input type="text" name="nq_title" id="nq_title" placeholder="Question title" />
@@ -6,4 +7,8 @@
 		<input type="text" name="nq_tags" id="nq_tags" placeholder="Tags" />
 		<input class="big_but green_b" type="submit" value="Ask It" />
 	</form>
+	{{else}}
+		<h1>Please login or register</h1>
+		<p>Before you can ask a question you must either register with the site or login if you are already a member. <a class="link" href="/login">Login/Register</a></p>
+	{{/if}}
 </template>
