@@ -141,5 +141,46 @@ if (Meteor.isClient) {
 
 	});//loginRegister.events ENDS
 
+
+
+
+
+	Template.questionDetails.events ({
+
+		'click #qedit' : function () {
+
+			var qd = $('#question_details'),
+				ef = $('#edit_form'),
+				details = ef.find('#eq_details'),
+				title = ef.find('#eq_title'),
+				tags = ef.find('#eq_tags');
+
+			title.val(Questions.findOne(currentDoc).title);
+			details.val(Questions.findOne(currentDoc).details);
+			tags.val(Questions.findOne(currentDoc).tags);
+			qd.hide();
+			ef.show();
+
+		},
+
+		'click #edit_form input[type=submit]' : function (e) {			
+
+				e.preventDefault();
+
+				var qd = $('#question_details'),
+					ef = $('#edit_form'),
+					details = ef.find('#eq_details'),
+					title = ef.find('#eq_title'),
+					tags = ef.find('#eq_tags');
+
+				Questions.update(currentDoc, {$set : {
+					'title'	:  title.val(),
+					'details' :  details.val(),
+					'tags' :  tags.val()
+				}});
+		}
+
+	});
+
 	
-}
+};

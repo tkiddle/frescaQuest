@@ -100,7 +100,7 @@ body{background:transparent url(../images/site-bg.png) repeat 0 0;font-family:My
 
 /* Content Area */
 #content{width:940px;margin:0 auto;/*background:grey;*/}
-#main_content{width:700px; float:left; margin-bottom: 80px; /*background:lightgrey;*/}
+#main_content{position:relative; width:700px; float:left; margin-bottom: 80px; /*background:lightgrey;*/}
 #sbr{width:180px; height:100px; padding:0 20px; float:right; border-left:1px solid #e1e1e1;/*background:lightblue;*/}
 
 /*Search Field*/
@@ -167,6 +167,10 @@ input:-moz-placeholder{color:#b8b8b8;}
 
 #speak_up .big_but{float:right;}
 
+#qedit{position:relative; text-align:right; clear:both; top:-28px; font-size:10px; color:#96958f;}
+#edit_form{display:none;}
+#eq_title{margin-top:0;}
+
 
 /*Forms*/
 
@@ -218,5 +222,5 @@ input:-moz-placeholder{color:#b8b8b8;}
 
 
 /*REUSABLE LINKS & BUTTONS*/
-.link, .home_link{cursor:pointer;}
+.link, .home_link, .edit_link{cursor:pointer;}
 .choice_links{text-transform:uppercase;}

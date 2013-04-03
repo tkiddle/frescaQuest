@@ -22,6 +22,9 @@ if (Meteor.isClient) {
   Template.questionDetails.qDetails = function () {
     var   qDocs = Questions.find().collection.docs,
           qDocsMember = Session.get('page_id').slice(Session.get('page_id').indexOf('/') + 1,Session.get('page_id').length);
+
+    //GLOBAL - Current document
+    currentDoc = qDocsMember;
     
     return qDocs[qDocsMember];
   };
