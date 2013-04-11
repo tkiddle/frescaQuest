@@ -1,4 +1,5 @@
 //Meteor events
+var frag;
 if (Meteor.isClient) {
 
 	//Content template events
@@ -171,13 +172,27 @@ if (Meteor.isClient) {
 					ef = $('#edit_form'),
 					details = ef.find('#eq_details'),
 					title = ef.find('#eq_title'),
-					tags = ef.find('#eq_tags');
+					tags = ef.find('#eq_tags'),
+					newTitle,
+					newDeets;
+					
 
 				Questions.update(currentDoc, {$set : {
 					'title'	:  title.val(),
-					'details' :  details.val(),
-					'tags' :  tags.val()
-				}});
+					'details' :  details.val()
+				}},{multi: false}, function(){
+
+					newTitle = Questions.findOne(currentDoc).title;
+					newDeets = Questions.findOne(currentDoc).details;
+
+					$('#qtitle').html(newTitle);
+					$('#qdetails p').html(newDeets);
+					qd.show();
+					ef.hide();
+
+				});			
+
+				
 		}
 
 	});

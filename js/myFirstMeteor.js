@@ -3,13 +3,13 @@ if (Meteor.isClient) {
   Template.header.homeLink = function(){
     return window.location.host;
   };
-
-  Template.account.greet = function(){
-    return Meteor.user().profile.fname;
-  };
-
+  
   Template.account.questions = function(){
       return Questions.find({owner: Meteor.userId()});
+  };
+  
+  Template.account.user = function(){
+      return Meteor.user();
   };
   Template.users.allUsers = function(){
        return Meteor.users.find();

@@ -1,15 +1,23 @@
 <template name="account">
 		
 	<h1>Your Account</h1>
-	<p>Welcome back  {{#if currentUser}}{{greet}}{{/if}}</p>
+	<p>Welcome back  {{#if currentUser}}{{user.profile.fname}}{{/if}}</p>
 
 	<div>
 		<h2>Your recent questions</h2>
+		<div id="profile">
+			<img src="/images/profile/me.jpeg" title="{{user.profile.fname}} {{user.profile.lname}}" alt="" />
+			<ul class="editable">
+				<li>Firstname:<span contenteditable="true">{{user.profile.fname}}</span></li>
+				<li>Lastname:<span contenteditable="true">{{user.profile.lname}}</span></li>
+			</ul>
+		</div>
 		<ul id="your_questions">
 		{{#each questions}}
 			<li>
 				<a class="q_link" href="/question/{{_id}}">{{title}}</a>
 			</li>
+
 		{{/each}}
 		</ul>
 	</div>
