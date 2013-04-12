@@ -2,6 +2,8 @@
 var frag;
 if (Meteor.isClient) {
 
+	alert('asdasd');
+
 	//Content template events
 	Template.content.events ({
 
@@ -9,7 +11,23 @@ if (Meteor.isClient) {
 
 		  var qTitle = $('#nq_title'),
 		      qDetails = $('#nq_details'),
-		      qTags = $('#nq_tags');
+		      qTags = $('#nq_tags'),
+		      questionDate = new Date(),
+		      dd = questionDate.getDay(),
+		      mm = questionDate.getMonth(),
+		      yyyy = questionDate.getFullYear(),
+		      fullDate = (dd + '/' + mm + '/' + yyyy),
+		      sortDate = Date.parse(questionDate);
+
+
+		      //Construct formatted date
+		      if(dd < 10){
+		      	dd = '0' + dd;
+		      }
+		       if(mm < 10){
+		      	mm = '0' + mm;
+		      }
+
 
 			e.preventDefault();
 
@@ -18,7 +36,9 @@ if (Meteor.isClient) {
 				author : (Meteor.user().profile.fname + ' ' +  Meteor.user().profile.lname),
 				title : qTitle.val(), 
 				details : qDetails.val(),
-				tags :  qTags.val().split(',')
+				tags :  qTags.val().split(','),
+				sortDate : sortDate,
+				dateAsked : fullDate
 			}, function (){
 				qTitle.val('');
 				qDetails.val('');
