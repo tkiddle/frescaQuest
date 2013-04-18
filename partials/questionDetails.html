@@ -36,23 +36,25 @@
 		<p id="comment_count" class="pink_20">43 Answers</p><p id="contrib_count">13 people have contributed to this question</p>
 		</div>
 		<div id="comm_wrap">
-			<div class="comments">
-				<p >{comment.commentText}</p>
+			{{#each test}}
+			<div data-comment-id="{{_id}}" class="comments">
+				<p >{{body}}</p>
 				<div class="vote_user">
 					<p class="qvoting">
 						<span class="vnumber">2</span>
 						<a class="vote vdown" title="Vote Down">Vote Down</a>
 						<a class="vote vup" title="Vote Up">Vote Up</a>
 					</p>
-					<p class="cu">Answered by: &nbsp;<span class="cu_name">{comment.user}</span></p>
+					<p class="cu">Answered by: &nbsp;<span class="cu_name">{{author}}</span></p>
 				</div>
 			</div>
+			{{/each}}
 		</div>		
 	</div>
 	
 	<form id="speak_up" class="clearfix">
 		<h4 class="blue_18">Leave an answer</h4>
-		<textarea placeholder="Type your answer here..."></textarea>
+		<textarea id="comment_me" placeholder="Type your answer here..."></textarea>
 		<label>Tag your comment
 		<input id="tag_me" type="text" placeholder="Type your tags here separated by a comma" />
 		</label>

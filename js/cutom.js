@@ -1,4 +1,5 @@
 if (Meteor.isClient) {
+  
 
   Template.header.homeLink = function(){
     return window.location.host;
@@ -43,13 +44,15 @@ if (Meteor.isClient) {
 
   };
 
+  Template.questionDetails.test = function () {
+    return Comments.find({relatedQuestion:currentDoc}).fetch();
+  };
 
 
-
-
-
-  //New meteor collection
+  //New meteor/mongo collection for Questions
   var Questions = new Meteor.Collection('questions');
+  //New meteor/mongo collection for Comments
+  var Comments = new Meteor.Collection('comments');
 
 }
 
@@ -57,8 +60,10 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
 
-  //New meteor collection
-  var Questions = new Meteor.Collection('questions'); 
+  //New meteor/mongo collection for Questions
+  var Questions = new Meteor.Collection('questions');
+  //New meteor/mongo collection for Comments
+  var Comments = new Meteor.Collection('comments');
 
   Meteor.startup(function () {
    // code to run on server at startup

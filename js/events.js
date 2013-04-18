@@ -1,8 +1,5 @@
 //Meteor events
-var frag;
 if (Meteor.isClient) {
-
-	alert('asdasd');
 
 	//Content template events
 	Template.content.events ({
@@ -19,12 +16,11 @@ if (Meteor.isClient) {
 		      fullDate = (dd + '/' + mm + '/' + yyyy),
 		      sortDate = Date.parse(questionDate);
 
-
 		      //Construct formatted date
 		      if(dd < 10){
 		      	dd = '0' + dd;
 		      }
-		       if(mm < 10){
+		      if(mm < 10){
 		      	mm = '0' + mm;
 		      }
 
@@ -211,11 +207,47 @@ if (Meteor.isClient) {
 					ef.hide();
 
 				});			
-
 				
+		},
+
+		'click  #speak_up input[type=submit]' : function (e) {
+
+			e.preventDefault();
+
+			var commentBody = $('#comment_me').val(),
+				questionDeets = Questions.findOne(currentDoc),
+				date = new Date(),
+				sortDate = Date.parse(date);
+
+			Comments.insert({
+
+				owner : Meteor.userId(),
+				author : (Meteor.user().profile.fname + ' ' +  Meteor.user().profile.lname),
+				body : commentBody,
+				votes : [],
+				relatedQuestion: currentDoc,
+				sortDate: sortDate
+
+
+			}, function(){
+
+				console.log('Comment Success');
+
+			});
+
+
+
 		}
 
 	});
 
 	
 };
+
+
+
+votes : {
+
+
+
+}
